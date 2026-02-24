@@ -1,18 +1,33 @@
 # CLASH-V2RAY-Subscription-Links
 
+Collect lots of Clash & V2ray & Base64 subscription links from GitHub and public sources.
 
-Collect Lots of Clash & V2ray & Base64 Subscription Links from GitHub & Public Sources  
+## Files
+- `SUB LINKS`: source list (one URL per line, with section comments).
+- `scripts/normalize_sub_links.py`: normalizes formatting and removes duplicate links.
 
-*   从 GitHub 和公共资源收集大量 Clash 和 V2ray 订阅链接
+## Usage
+You can read raw links directly from `SUB LINKS`, or preprocess before consumption.
 
-*   Соберите множество ссылок на подписку на Clash и V2ray из GitHub и общедоступных источников
-    
-* تعداد زیادی لینک اشتراک   Clash و V2ray که از GitHub و منابع عمومی دیگر جمع آوری شده
+Example: output only URL lines.
 
+```bash
+rg '^https?://' 'SUB LINKS'
+```
 
-![IMG_3534](https://github.com/mermeroo/V2RAY-and-CLASH-Subscription-Links/assets/131429982/2620a6c6-5392-49b3-9332-fbca872d2c5c)
+## Maintenance
+Before committing updates to `SUB LINKS`, run:
 
+```bash
+python3 scripts/normalize_sub_links.py
+```
 
+This will:
+- trim spaces,
+- normalize section comment format,
+- remove markdown bullets,
+- deduplicate URLs while keeping first occurrence order.
 
-
-
+## Risk notice
+These links are collected from public sources. Availability, correctness, and safety are not guaranteed.
+Please review and validate remote content before use.
